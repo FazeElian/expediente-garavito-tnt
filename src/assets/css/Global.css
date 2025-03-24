@@ -1,0 +1,31 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #101010;
+}
+
+/* Variables */
+:root {
+    /* Colors */
+    --color-black: #101010;
+    --color-black-light: #1E1E1E;
+    --color-gray: #BFBFBF;
+    --color-white: #F5F5F5;
+    --color-dark-purple: #1C1440;
+    --color-light-purple: #5C7AEA;
+    --color-green-spotify: #1DB954;
+    --color-red-youtube: #FF0033;
+    
+    /* Fonts */
+    --font-special-elite: "Special Elite", system-ui;
+    --font-raleway: "Raleway", sans-serif;
+}
