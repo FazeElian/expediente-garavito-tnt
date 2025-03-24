@@ -28,4 +28,6 @@ body {
     /* Fonts */
     --font-special-elite: "Special Elite", system-ui;
     --font-raleway: "Raleway", sans-serif;
+    
+    cursor: url("../img/Cursor.png"), auto;
 }
