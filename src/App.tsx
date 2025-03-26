@@ -1,11 +1,12 @@
 // Components
 import { Header } from "./components/Header"
+import { Banner } from "./components/Banner"
 
 function App() {
   return (
     <>
       <Header />
-      <h1>Content</h1>
+      <Banner />
     </>
   )
 }
