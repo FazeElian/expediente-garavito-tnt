@@ -1,0 +1,20 @@
+.title-section {
+    display: flex;
+    width: 100%;
+    height: auto;
+    color: var(--color-white);
+    font-family: var(--font-raleway);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 650;
+    font-size: 22px;
+    margin-bottom: 2rem;
+}
+
+/* Responsive 1440px */
+@media screen and (max-width: 1440px) {
+    .title-section {
+        font-size: 20px;
+    }
+}
