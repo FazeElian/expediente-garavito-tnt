@@ -20,7 +20,7 @@ const Header = () => {
         <header className="header">
             <ul className="navbar">
                 <li className="navbar-item">Inicio</li>
-                <li className="navbar-item">Acerca de</li>
+                <li className="navbar-item">Blog</li>
                 <li className="navbar-item navbar-item-img">
                     <img src={Logo} alt="" />
                 </li>
@@ -35,7 +35,7 @@ const Header = () => {
             <ul className={ `navbar-mobile ${menu ? "active" : ""}` }>
                 <h2>Menú:</h2>
                 <li className="navbar-mobile-item">Inicio</li>
-                <li className="navbar-mobile-item">Acerca de</li>
+                <li className="navbar-mobile-item">Blog</li>
                 <li className="navbar-mobile-item">Episodios</li>
                 <li className="navbar-mobile-item">Contacto</li>
             </ul>
