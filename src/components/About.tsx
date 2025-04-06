@@ -16,7 +16,7 @@ const About = () => {
             </div>
             <div className="about-txt">
                 <TitleSection
-                    icon=""
+                    icon={<></>}
                     text="Acerca del Proyecto"
                 />
                 <p>
