@@ -3,7 +3,7 @@ import "../assets/css/components/TitleSection.css";
 
 // Props type
 type TitleSectionProps = {
-    icon: string,
+    icon: React.ReactElement,
     text: string
 }
 

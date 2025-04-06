@@ -1,0 +1,185 @@
+.episodes-gallery {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 7rem;
+    margin: 4rem 0 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12rem 0;
+}
+
+    .episode-card {
+        display: flex;
+        flex: 100%;
+        max-width: 390px;
+        height: auto;
+        flex-direction: column;
+        font-family: var(--font-raleway);
+        border-radius: 10px;
+        border: 1px solid var(--color-gray);
+    }
+
+        .episode-img {
+            display: flex;
+            width: 100%;
+        }
+
+            .episode-img img {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+
+        .episode-txt {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            padding: 27px;
+        }
+
+            .episode-txt h2 {
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .episode-txt h2,
+            .episode-txt p {
+                color: var(--color-white);
+            }
+
+            .episode-txt p {
+                font-size: 14px;
+                margin-top: 1.2rem;
+                line-height: 18px;
+                font-weight: 550;
+            }
+
+            .episode-txt-extra {
+                display: flex;
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+                color: var(--color-gray) !important;
+                font-size: 16px;
+                font-weight: 550;
+                gap: 20px;
+            }
+
+                .episode-txt-extra svg {
+                    width: 17px;
+                    height: 17px;
+                }
+
+            .episode-txt-date,
+            .episode-txt-duration {
+                display: flex;
+                width: auto;
+                height: auto;
+                gap: 5px;
+                align-items: center;
+            }
+
+            .episode-btns {
+                display: flex;
+                width: 100%;
+                height: auto;
+                gap: 1rem;
+                margin: 1.7rem 0 1rem;
+            }
+
+                .btn-episode {
+                    display: flex;
+                    width: auto;
+                    height: auto;
+                    padding: 12px 2rem 12px;
+                    text-decoration: none;
+                    color: var(--color-white);
+                    font-weight: 600;
+                    border-radius: 8px;
+                    gap: 6px;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                }
+
+                    .btn-episode svg {
+                        width: 17px;
+                        height: 17px;
+                    }
+
+                    .btn-episode--spotify {
+                        background-color: var(--color-green-spotify);
+                    }
+
+                    .btn-episode--youtube {
+                        background-color: var(--color-red-youtube);
+                    }
+
+/* Responsive 1440px */
+@media screen and (max-width: 1440px) {
+    .episodes-gallery {
+        gap: 5rem;
+    }
+
+    .episode-card {
+        max-width: 370px;
+        border-radius: 8px;
+    }
+
+    .episode-card img {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .episode-txt h2 {
+        font-size: 16px;
+    }
+
+    .episode-txt p {
+        font-size: 13.5px;
+    }
+
+    .episode-txt-extra {
+        font-size: 15px;
+    }
+    
+    .episode-txt-extra svg,
+    .btn-episode svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .episode-btns {
+        margin: 1.5rem 0 12px;
+    }
+
+    .btn-episode {
+        font-size: 14px;
+    }
+}
+
+/* Responsive 1280px */
+@media screen and (max-width: 1280px) {
+    .episodes-gallery {
+        padding: 0 8rem 0;
+    }
+}
+
+/* Responsive 425px */
+@media screen and (max-width: 425px) {
+    .episodes-gallery {
+        gap: 3rem;
+        margin: 2.5rem 0 3rem;
+    }
+
+    .episode-card {
+        max-width: 300px;
+        min-width: 300px;
+    }
+
+    .btn-episode {
+        width: 50%;
+        padding: 12px 0 12px;
+    }
+}
