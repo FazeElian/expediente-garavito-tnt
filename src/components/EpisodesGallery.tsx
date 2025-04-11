@@ -8,6 +8,9 @@ import { EpisodeCard } from "./EpisodeCard";
 // React icons
 import { BiMoviePlay } from "react-icons/bi";
 
+// React scroll
+import { Element } from "react-scroll";
+
 const EpisodesGallery = () => {
     return (
         <>
@@ -15,14 +18,14 @@ const EpisodesGallery = () => {
                 icon={<BiMoviePlay />}
                 text="Episodios"
             />
-            <section className="episodes-gallery">
+            <Element name="episodes" className="episodes-gallery">
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
-            </section>
+            </Element>
         </>
     )
 }

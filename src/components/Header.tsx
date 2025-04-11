@@ -9,6 +9,9 @@ import Logo from "../assets/img/Logo.png";
 // React icons
 import { RiMenu3Line } from "react-icons/ri";
 
+// React scroll
+import { Link as LinkScroll } from "react-scroll";
+
 const Header = () => {
     const [ menu, setMenu ] = useState(false)
 
@@ -24,7 +27,16 @@ const Header = () => {
                 <li className="navbar-item navbar-item-img">
                     <img src={Logo} alt="" />
                 </li>
-                <li className="navbar-item">Episodios</li>
+                <LinkScroll
+                    to="episodes"
+                    className="navbar-item"
+                    spy={true} 
+                    smooth={true} 
+                    offset={-300} 
+                    duration={500}
+                >
+                    Episodios
+                </LinkScroll>
                 <li className="navbar-item">Contacto</li>
                 <li className="navbar-item navbar-item-menu">
                     <button className="btn-menu" onClick={handleMenu}>
@@ -36,7 +48,16 @@ const Header = () => {
                 <h2>Menú:</h2>
                 <li className="navbar-mobile-item">Inicio</li>
                 <li className="navbar-mobile-item">Narraciones</li>
-                <li className="navbar-mobile-item">Episodios</li>
+                <LinkScroll
+                    to="episodes"
+                    className="navbar-mobile-item"
+                    spy={true} 
+                    smooth={true} 
+                    offset={-225} 
+                    duration={500}
+                >
+                    Episodios
+                </LinkScroll>
                 <li className="navbar-mobile-item">Contacto</li>
             </ul>
         </header>
