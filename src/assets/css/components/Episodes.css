@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: center;
     padding: 0 12rem 0;
+    border-bottom: 2px solid var(--color-gray);
+    padding-bottom: 8rem;
+    margin-bottom: 7rem;
 }
 
     .episode-card {
@@ -162,7 +165,8 @@
 /* Responsive 1280px */
 @media screen and (max-width: 1280px) {
     .episodes-gallery {
-        padding: 0 8rem 0;
+        padding: 0 8rem 8rem;
+        margin-bottom: 5rem;
     }
 }
 
