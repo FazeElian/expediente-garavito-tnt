@@ -7,10 +7,12 @@ import AboutImg from "../assets/img/About.jpg";
 // Components
 import { TitleSection } from "./TitleSection";
 
+// React scroll
+import { Element } from "react-scroll";
 
 const About = () => {
     return (
-        <div className="about">
+        <Element name="about" className="about">
             <div className="about-img">
                 <img src={AboutImg} alt="Acerca del proyecto" />
             </div>
@@ -28,7 +30,7 @@ const About = () => {
                     magna a finibus. Praesent venenatis tempus mi. Aliquam tempus, ipsum ut blandit facilisis.
                 </p>
             </div>
-        </div>
+        </Element>
     )
 }
 

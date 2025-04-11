@@ -5,6 +5,9 @@ import "../assets/css/components/Banner.css";
 import { MdHeadphones, MdNavigateNext } from "react-icons/md";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
+// React scroll
+import { Link as LinkScroll } from "react-scroll";
+
 const Banner = () => {
     return (
         <section className="banner">
@@ -19,9 +22,16 @@ const Banner = () => {
                     <MdNavigateNext />
                 </a>
             </div>
-            <button className="banner-btn-scroll">
+            <LinkScroll
+                to="about" 
+                className="banner-btn-scroll"
+                spy={true} 
+                smooth={true} 
+                offset={-150} 
+                duration={400}
+            >
                 <HiOutlineChevronDoubleDown />
-            </button>
+            </LinkScroll>
         </section>
     )
 }
