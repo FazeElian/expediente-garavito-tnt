@@ -6,31 +6,69 @@ import { FaTwitter, FaInstagram, FaSpotify } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 
+// Framer motion
+import { motion } from "motion/react";
+
 const Footer = () => {
     return (
         <footer className="footer">
             <h2>La historia continúa... Conéctate con nosotros.</h2>
             <div className="footer-group">
-                <a href="#" className="footer-item">
+                <motion.a
+                    href="#"
+                    className="footer-item"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                        duration: .25,
+                    }}
+                >
                     <BsYoutube />
                     Youtube
-                </a>
-                <a href="#" className="footer-item">
+                </motion.a>
+                <motion.a
+                    href="#"
+                    className="footer-item"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                        duration: .25,
+                    }}
+                >
                     <FaTwitter />
                     Twitter - X
-                </a>
-                <a href="#" className="footer-item">
+                </motion.a>
+                <motion.a
+                    href="#"
+                    className="footer-item"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                        duration: .25,
+                    }}
+                >
                     <FaInstagram />
                     Instagram
-                </a>
-                <a href="#" className="footer-item">
+                </motion.a>
+                <motion.a
+                    href="#"
+                    className="footer-item"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                        duration: .25,
+                    }}
+                >
                     <FaSpotify />
                     Spotify
-                </a>
-                <a href="#" className="footer-item">
+                </motion.a>
+                <motion.a
+                    href="#"
+                    className="footer-item"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                        duration: .25,
+                    }}
+                >
                     <IoMdMail />
                     Mail
-                </a>
+                </motion.a>
             </div>
         </footer>
     )

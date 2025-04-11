@@ -6,9 +6,18 @@ import { FaRegCalendar } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { FaSpotify, FaYoutube } from "react-icons/fa";
 
+// Framer motion
+import { motion } from "motion/react";
+
 const EpisodeCard = () => {
     return (
-        <div className="episode-card">
+        <motion.div
+            className="episode-card"
+            whileHover={{ scale: 1.1 }}
+            transition={{
+                duration: .25,
+            }}
+        >
             <div className="episode-img">
                 <img src={EpisodeImg} alt="" />
             </div>
@@ -39,7 +48,7 @@ const EpisodeCard = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
