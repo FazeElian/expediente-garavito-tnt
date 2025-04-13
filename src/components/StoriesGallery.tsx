@@ -18,7 +18,7 @@ const StoriesGallery = () => {
                 icon={<BiMoviePlay />}
                 text="Voces del Campus"
             />
-            <Element name="episodes" className="episodes-gallery stories-gallery">
+            <Element name="stories" className="episodes-gallery stories-gallery">
                 <StorieCard />
                 <StorieCard />
                 <StorieCard />
