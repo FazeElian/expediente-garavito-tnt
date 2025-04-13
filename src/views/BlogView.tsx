@@ -1,5 +1,6 @@
 // View components
 import { BlogBanner } from "../components/BlogBanner"
+import { Footer } from "../components/Footer"
 import { StoriesGallery } from "../components/StoriesGallery"
 
 const BlogView = () => {
@@ -7,6 +8,7 @@ const BlogView = () => {
         <>
             <BlogBanner />
             <StoriesGallery />
+            <Footer />
         </>
     )
 }

@@ -13,6 +13,10 @@
     margin-bottom: 7rem;
 }
 
+    .stories-gallery {
+        border-bottom: none;
+    }
+    
     .episode-card {
         display: flex;
         flex: 100%;
