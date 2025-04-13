@@ -121,6 +121,26 @@
                     .btn-episode--youtube {
                         background-color: var(--color-red-youtube);
                     }
+    
+    .cont-read-more {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .read-more {
+        display: flex;
+        color: var(--color-gray);
+        text-decoration: none;
+        margin: 10px 0 5px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: url("../../img/Pointer.png"), auto;
+    }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
 
 /* Responsive 1440px */
 @media screen and (max-width: 1440px) {

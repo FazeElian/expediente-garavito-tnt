@@ -25,6 +25,7 @@
 
     .banner-blog {
         background-image: url("../../img/BlogBannerBackground.png");
+        margin-bottom: 7rem;
     }
 
     .banner a {
