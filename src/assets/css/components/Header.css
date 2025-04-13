@@ -34,6 +34,8 @@
             font-size: 18px;
             cursor: url("../../img/Pointer.png"), auto;
             transition: .2s ease-in-out;
+            text-decoration: none;
+            color: var(--color-white);
         }
 
             .navbar-item:hover {
@@ -134,8 +136,10 @@
         }
 
         .navbar-mobile-item {
+            display: flex;
             font-size: 17px;
             cursor: url("../../img/Pointer.png"), auto;
+            color: var(--color-white);
         }
 }
 
