@@ -17,7 +17,7 @@ const ShareStoryView = () => {
     useEffect(() => {
         const timeOut = setTimeout(() => {
             setBtnContinue(true)
-        }, 1)
+        }, 5000)
 
         return () => clearTimeout(timeOut)
     }, [])
