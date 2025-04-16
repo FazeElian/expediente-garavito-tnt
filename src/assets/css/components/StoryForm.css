@@ -65,11 +65,12 @@
     gap: 2rem;
     text-align: center;
     opacity: 1;
-    transition: .5s ease-in;
+    transition: .5s ease-in-out;
 }
+
 .warning-story.disabled {
     opacity: 0;
-    transition: .5s ease-in-out;
+    transition: .5s ease-in;
 }
 
     .warning-icon {
@@ -131,6 +132,102 @@
         height: 25px;
     }
 
+.form-share-story {
+    display: flex;
+    width: 50%;
+    min-width: 750px;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+    padding: 3.5rem;
+    z-index: 2;
+    font-family: var(--font-raleway);
+    box-shadow: 0 0 20px var(--color-red-youtube);
+    color: var(--color-white);
+    flex-direction: column;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+    .form-share-story.active {
+        opacity: 1;
+        transition: .5s ease-in;
+    }
+
+    .form-share-story h1 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        gap: 12px;
+    }
+
+        .form-group label {
+            display: flex;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            display: flex;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 1rem;
+            font-family: var(--font-raleway);
+            border-radius: 8px;
+            border: 1px solid var(--color-white);
+            background: transparent;
+            color: var(--color-white);
+            outline: none;
+            transition: .3s ease-in-out;
+        }
+
+            .form-group input:focus,
+            .form-group textarea:focus {
+                border: 1px solid var(--color-red-youtube);
+                transition: .3s ease-in;
+            }
+
+        .form-share-story textarea {
+            min-height: 180px;
+            overflow: auto;
+        }
+
+        .btn-submit-story {
+            display: flex;
+            width: 100%;
+            height: auto;
+            background-color: var(--color-red-youtube);
+            border: 1px solid var(--color-black);
+            font-size: 17px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            outline: none;
+            cursor: url("../../img/Pointer.png"), auto;
+            color: var(--color-white);
+            font-family: var(--font-raleway);
+            padding: 1rem 0 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: .2s ease-in-out;
+        }
+
+            .btn-submit-story:hover {
+                background-color: var(--color-black);
+                border: 1px solid var(--color-red-youtube);
+                color: var(--color-red-youtube);
+                transition: .2s ease-in;
+            }
+
 @keyframes blink {
     0%, 100% {
         opacity: 1;
@@ -159,6 +256,28 @@
     .top-share-story {
         padding: 3.5rem 4.5rem 0;
     }
+
+    .form-share-story {
+        border-radius: 10px;
+    }
+
+    .form-share-story h1 {
+        font-size: 22px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 15px;
+        padding: .95rem;
+    }
+
+    .form-group textarea {
+        min-height: 130px;
+    }
+
+    .btn-submit-story {
+        font-size: 16px;
+    }
 }
 
 /* Responsive 1024px */
@@ -172,12 +291,22 @@
         width: 25px;
         height: 25px;
     }
+
+    .form-share-story {
+        width: 80%;
+        min-width: 300px;
+        padding: 3rem;
+    }
 }
 
 /* Responsive 768px */
 @media screen and (max-width: 768px) {
     .top-share-story {
         padding: 3rem 4rem 0;
+    }
+
+    .form-share-story {
+        padding: 2.5rem;
     }
 }
 
@@ -198,6 +327,16 @@
     }
 
     .top-share-story {
-        padding: 2.8rem 3.2rem 0;
+        padding: 2.8rem 3rem 0;
+    }
+
+    .form-share-story {
+        min-width: 280px;
+        width: 77%;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        margin: 4rem auto 0;
     }
 }

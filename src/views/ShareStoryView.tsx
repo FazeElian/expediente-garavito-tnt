@@ -12,11 +12,12 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 const ShareStoryView = () => {
     const [ intro, setIntro ] = useState(true);
     const [ btnContinue, setBtnContinue ] = useState(false);
+    const [ form, setForm ] = useState(false);
 
     useEffect(() => {
         const timeOut = setTimeout(() => {
             setBtnContinue(true)
-        }, 5000)
+        }, 1)
 
         return () => clearTimeout(timeOut)
     }, [])
@@ -24,6 +25,7 @@ const ShareStoryView = () => {
     const disableIntro = () => {
         setIntro(false)
         setBtnContinue(false)
+        setForm(true)
     }
 
     return (
@@ -47,6 +49,36 @@ const ShareStoryView = () => {
                 Continuar
                 <MdOutlineKeyboardDoubleArrowRight />
             </button>
+            <form className={ `form-share-story ${form ? "active" : ""}` }>
+                <h1>Comparte tu historia</h1>
+                <div className="form-group">
+                    <label htmlFor="title">Título de la historia</label>
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Ponle título a tu experiencia inexplicable."
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="name">Tu Nombre</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Mantén tu identidad… o no."
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="story">Historia</label>
+                    <textarea
+                        name="story"
+                        id="story"
+                        placeholder="Describe lo que viviste... aunque nadie te crea."
+                    />
+                </div>
+                <button className="btn-submit-story" type="submit">
+                    Compartir historia
+                </button>
+            </form>
         </section>
     )
 }
