@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Styles
 import "../assets/css/components/Banner.css";
 
@@ -13,9 +15,9 @@ const BlogBanner = () => {
             <h1>Cuéntanos tu historia</h1>
             <h2>Lo que ocurrió en la Escuela… no todos se atreven a contarlo.</h2>
             <div className="banner-btns">
-                <a href="#" className="btn-banner btn-banner--purple">
+                <Link to="/share-story" className="btn-banner btn-banner--purple">
                     Comparte tu historia
-                </a>
+                </Link>
             </div>
             <LinkScroll
                 to="stories" 

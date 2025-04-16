@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 // Views components
 import HomeView from "./views/HomeView";
 import BlogView from "./views/BlogView";
+import ShareStoryView from "./views/ShareStoryView";
 
 function Router() {
     return (
@@ -15,6 +16,7 @@ function Router() {
                     <Route index element={<HomeView />} />
                     <Route path="/blog" element={<BlogView />} />
                 </Route>
+                <Route path="/share-story" element={<ShareStoryView />} /> 
             </Routes>
         </BrowserRouter>
     )
