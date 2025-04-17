@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 // Styles
@@ -28,17 +28,18 @@ const ShareStoryView = () => {
         setForm(true)
     }
 
-    const fileInputRef = useRef(null);
-    const [fileName, setFileName] = useState('');
+    // Handle input for image field
+    const fileInputRef = useRef<HTMLInputElement>(null);
+    const [fileName, setFileName] = useState<string>('');
   
-    const handleButtonClick = () => {
-        fileInputRef.current.click();
+    const handleClick = () => {
+        fileInputRef.current?.click();
     };
   
-    const handleFileChange = (event) => {
-        const selectedFile = event.target.files[0];
-        if (selectedFile) {
-            setFileName(selectedFile.name);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            setFileName(file.name);
         } else {
             setFileName('');
         }
@@ -65,7 +66,7 @@ const ShareStoryView = () => {
                 Continuar
                 <MdOutlineKeyboardDoubleArrowRight />
             </button>
-            <form className={ `form-share-story ${form ? "active" : ""}` }>
+            <form action="" className={ `form-share-story ${form ? "active" : ""}` } method="post">
                 <h1>Comparte tu historia</h1>
                 <div className="form-group">
                     <label htmlFor="title">Título de la historia</label>
@@ -85,14 +86,14 @@ const ShareStoryView = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="image">La fotografía del evento...</label>
-                    <button onClick={handleButtonClick} type="button">
-                        {fileName ? "La imagen se ha cargado" : "Seleccionar Imagen"}
+                    <button className="custom-file-button" onClick={handleClick} type="button">
+                        {fileName ? "Imagen cargada" : 'Seleccionar Archivo'}
                     </button>
                     <input
                         type="file"
                         ref={fileInputRef}
-                        style={{ display: "none" }}
-                        onChange={handleFileChange}
+                        style={{ display: 'none' }}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="form-group">
