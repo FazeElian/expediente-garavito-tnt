@@ -9,10 +9,14 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
-const StorieCard = () => {
+// Type
+import { Story } from "../types/type";
+
+const StorieCard = (props: Story) => {
     return (
         <motion.div
             className="episode-card"
+            key={props.id}
             whileHover={{ scale: 1.1 }}
             transition={{
                 duration: .25,
@@ -22,7 +26,7 @@ const StorieCard = () => {
                 <img src={EpisodeImg} alt="" />
             </div>
             <div className="episode-txt">
-                <h2>El Susurro que Ningún Estudiante Quiso Escuchar en la Biblioteca</h2>
+                <h2>{props.title}</h2>
                 <div className="episode-txt-extra">
                     <div className="episode-txt-date">
                         <FaRegCalendar />
@@ -34,7 +38,7 @@ const StorieCard = () => {
                     </div>
                 </div>
                 <p>
-                    <b>Autor: </b> Anónimo
+                    <b>Autor: </b> {props.author}
                 </p>
                 <div className="cont-read-more">
                     <Link to="#" className="read-more">Leer más</Link>
