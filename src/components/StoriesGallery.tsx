@@ -26,7 +26,7 @@ const StoriesGallery = () => {
         retry: 1,
         refetchOnWindowFocus: false,
         gcTime: 30 * 10000,
-        refetchInterval: 20 * 1000,
+        staleTime: 1000 * 60 * 5,
     });
 
     if (isLoading) return <h1>Loading....</h1>;
