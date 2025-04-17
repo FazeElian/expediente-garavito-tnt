@@ -181,7 +181,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group button {
             display: flex;
             font-size: 17px;
             font-weight: 500;
@@ -194,6 +195,10 @@
             outline: none;
             transition: .3s ease-in-out;
         }
+
+            .form-group button {
+                cursor: url("../../img/Pointer.png"), auto;
+            }
 
             .form-group input:focus,
             .form-group textarea:focus {
@@ -271,7 +276,8 @@
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group button {
         font-size: 15px;
         padding: .95rem;
     }

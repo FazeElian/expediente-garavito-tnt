@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Styles
-import { Link } from "react-router-dom";
 import "../assets/css/components/StoryForm.css";
 
 // React icons
@@ -10,9 +10,9 @@ import { IoWarningOutline } from "react-icons/io5";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const ShareStoryView = () => {
-    const [ intro, setIntro ] = useState(true);
+    const [ intro, setIntro ] = useState(false);
     const [ btnContinue, setBtnContinue ] = useState(false);
-    const [ form, setForm ] = useState(false);
+    const [ form, setForm ] = useState(true);
 
     useEffect(() => {
         const timeOut = setTimeout(() => {
@@ -27,6 +27,22 @@ const ShareStoryView = () => {
         setBtnContinue(false)
         setForm(true)
     }
+
+    const fileInputRef = useRef(null);
+    const [fileName, setFileName] = useState('');
+  
+    const handleButtonClick = () => {
+        fileInputRef.current.click();
+    };
+  
+    const handleFileChange = (event) => {
+        const selectedFile = event.target.files[0];
+        if (selectedFile) {
+            setFileName(selectedFile.name);
+        } else {
+            setFileName('');
+        }
+    };
 
     return (
         <section className="share-story">
@@ -65,6 +81,18 @@ const ShareStoryView = () => {
                         type="text"
                         name="name"
                         placeholder="Mantén tu identidad… o no."
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="image">La fotografía del evento...</label>
+                    <button onClick={handleButtonClick} type="button">
+                        {fileName ? "La imagen se ha cargado" : "Seleccionar Imagen"}
+                    </button>
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        style={{ display: "none" }}
+                        onChange={handleFileChange}
                     />
                 </div>
                 <div className="form-group">
