@@ -12,6 +12,11 @@ import { Link } from "react-router-dom";
 // Type
 import { Story } from "../types/type";
 
+// Date formats & othef utils
+import { formatDate } from "../utils/formatDate";
+import { timeAgo } from "../utils/timeAgo";
+import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
+
 const StorieCard = (props: Story) => {
     return (
         <motion.div
@@ -30,11 +35,11 @@ const StorieCard = (props: Story) => {
                 <div className="episode-txt-extra">
                     <div className="episode-txt-date">
                         <FaRegCalendar />
-                        22/03/2025
+                        {formatDate(props.createdAt)}
                     </div>
                     <div className="episode-txt-duration">
                         <MdOutlineWatchLater />
-                        Hace 15 min
+                        {capitalizeFirstLetter(timeAgo(props.createdAt))}
                     </div>
                 </div>
                 <p>

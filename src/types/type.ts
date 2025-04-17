@@ -4,6 +4,6 @@ export type Story = {
     author: string,
     content: string,
     image: string,
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
 }
