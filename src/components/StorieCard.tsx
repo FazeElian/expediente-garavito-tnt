@@ -46,7 +46,13 @@ const StorieCard = (props: Story) => {
                     <b>Autor: </b> {props.author}
                 </p>
                 <div className="cont-read-more">
-                    <Link to="#" className="read-more">Leer más</Link>
+                    <Link
+                        to={`/blog/${props.id}`}
+                        className="read-more"
+                        target="_blank"
+                    >
+                        Leer más
+                    </Link>
                 </div>
             </div>
         </motion.div>
