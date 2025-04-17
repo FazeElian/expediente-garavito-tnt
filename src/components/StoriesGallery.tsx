@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 // Styles
 import "../assets/css/components/Episodes.css";
@@ -17,23 +16,20 @@ import { Element } from "react-scroll";
 // Type
 import { Story } from "../types/type";
 
+// Api call function
+import { getAllStories } from "../api/api";
+
 const StoriesGallery = () => {
-    const [stories, setStories] = useState<Story[]>([])
+    const { data: stories, isLoading } = useQuery({
+        queryFn: getAllStories,
+        queryKey: ["stories"],
+        retry: 1,
+        refetchOnWindowFocus: false,
+        gcTime: 30 * 10000,
+        refetchInterval: 20 * 1000,
+    });
 
-    const BASE_URL = import.meta.env.VITE_API_URL
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                axios(`${BASE_URL}/stories`)
-                    .then(response => {setStories(response.data)})
-                    .catch(error => {console.log("Error: ", error)})
-            } catch (error) {
-                console.error("Error fetching Stories: ", error);
-            }
-        }
-        fetchData();
-    }, [BASE_URL]);
+    if (isLoading) return <h1>Loading....</h1>;
 
     return (
         <>
@@ -42,7 +38,7 @@ const StoriesGallery = () => {
                 text="Voces del Campus"
             />
             <Element name="stories" className="episodes-gallery stories-gallery">
-                {stories.map((story: Story) => (
+                {stories?.map((story: Story) => (
                     <StorieCard
                         key={story.id}
                         id={story.id}
