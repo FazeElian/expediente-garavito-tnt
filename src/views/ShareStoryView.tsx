@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
-import { isAxiosError } from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 // Styles
 import "../assets/css/components/StoryForm.css";
@@ -15,6 +14,9 @@ import { useForm } from "react-hook-form";
 
 // Type
 import { StoryForm } from "../types/type";
+
+// API Call
+import { newStory } from "../api/api";
 
 const ShareStoryView = () => {
     const [ intro, setIntro ] = useState(false);
@@ -60,18 +62,27 @@ const ShareStoryView = () => {
         content: "",
     }
 
-    const { register, handleSubmit, formState: { errors } } = useForm ({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm ({
         defaultValues: initialValues
     });
 
+    const navigate = useNavigate()
+
     const handleNewStory= async (formData: StoryForm) => {
-        try {
-            console.log(formData)
-        } catch (error) {
-            if (isAxiosError(error) && error.response) {
-                console.log(error.response.data);
-            }
-        }
+        const imageObtained = formData.image[0]
+        const data: StoryForm = {
+            title: formData.title,
+            author: formData.author,
+            image: imageObtained,
+            content: formData.content,
+        };
+
+        newStory(data);
+
+        // Clean form
+        reset()
+
+        navigate("/blog")
     }
 
     return (
@@ -129,9 +140,19 @@ const ShareStoryView = () => {
                     <label htmlFor="name">Tu Nombre</label>
                     <input
                         type="text"
-                        name="name"
                         placeholder="Mantén tu identidad… o no."
+                        {...register("author", {
+                            pattern: {
+                                value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s-]+$/,
+                                message: "Sólo se permiten letras, números y guiones."
+                            }
+                        })}
                     />
+                    {errors.author && 
+                        <p style={{ color: "#FF0033" }}>
+                            {errors.author?.message}
+                        </p>
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="image">La fotografía del evento...</label>

@@ -8,4 +8,4 @@ export type Story = {
     updatedAt: string;
 }
 
-    export type StoryForm = Pick<Story, "title" | "author" | "image" | "content">
+export type StoryForm = Pick<Story, "title" | "author" | "image" | "content">

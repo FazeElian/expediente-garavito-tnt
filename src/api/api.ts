@@ -4,7 +4,7 @@ import { isAxiosError } from "axios";
 import api from "./config";
 
 // Type
-import { Story } from "../types/type";
+import { Story, StoryForm } from "../types/type";
 
 export async function getAllStories () {
     try {
@@ -27,5 +27,17 @@ export async function getStoryById (id: number) {
             throw new Error(error.response.data.error);
         }
         throw new Error("Error getting story.")
+    }
+}
+
+export async function newStory (formData: StoryForm) {
+    try {
+        const { data } = await api.post("/stories/new", formData);
+        return data;
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+        throw new Error(`Error getting story. ${error}`)
     }
 }
