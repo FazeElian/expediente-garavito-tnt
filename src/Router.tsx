@@ -10,10 +10,13 @@ const BlogView = lazy(() => import("./views/BlogView"));
 const ShareStoryView = lazy(() => import("./views/ShareStoryView"));
 const StoryView = lazy(() => import("./views/StoryView"));
 
+// Loader component
+import { Loading } from "./components/Loading";
+
 function Router() {
     return (
         <BrowserRouter>
-            <Suspense fallback={<div>Cargando...</div>}>
+            <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route element={<Header />}>
                         <Route index element={<HomeView />} />
