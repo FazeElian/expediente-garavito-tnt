@@ -184,10 +184,6 @@ const ShareStoryView = () => {
                         placeholder="Describe lo que viviste... aunque nadie te crea."
                         {...register("content", {
                             required: "Debes escribir tu experiencia",
-                            pattern: {
-                                value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s-]+$/,
-                                message: "Sólo se permiten letras, números y guiones."
-                            },
                             minLength: {
                                 value: 30,
                                 message: "La historia debe tener al menos 30 caracteres."
