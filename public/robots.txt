@@ -1,4 +1,6 @@
 User-agent: *
 Disallow:
 Allow:
-Sitemap:
+Sitemap: https://expediente-garavito.netlify.app/sitemap.xml
+Sitemap: https://expediente-garavito.netlify.app/sitemap-blog.xml
+Sitemap: https://expediente-garavito.netlify.app/sitemap-share-story.xml
