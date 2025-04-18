@@ -5,7 +5,7 @@ import { Link, Outlet } from "react-router-dom";
 import "../assets/css/components/Header.css";
 
 // Images - icons
-import Logo from "../assets/img/Logo.png";
+import Logo from "../assets/img/Logo.webp";
 
 // React icons
 import { RiMenu3Line } from "react-icons/ri";

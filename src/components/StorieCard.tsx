@@ -1,5 +1,5 @@
 // Episode example img
-import EpisodeImg from "../assets/img/Episode.jpg";
+import EpisodeImg from "../assets/img/Episode.webp";
 
 // React icons
 import { FaRegCalendar } from "react-icons/fa6";

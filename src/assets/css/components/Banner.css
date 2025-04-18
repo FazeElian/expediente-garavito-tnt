@@ -20,11 +20,11 @@
 }
 
     .banner {
-        background-image: url("../../img/BannerBackground.jpg");
+        background-image: url("../../img/BannerBackground.webp");
     }
 
     .banner-blog {
-        background-image: url("../../img/BlogBannerBackground.png");
+        background-image: url("../../img/BlogBannerBackground.webp");
         margin-bottom: 7rem;
     }
 
