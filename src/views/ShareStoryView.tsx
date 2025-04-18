@@ -19,9 +19,9 @@ import { StoryForm } from "../types/type";
 import { newStory } from "../api/api";
 
 const ShareStoryView = () => {
-    const [ intro, setIntro ] = useState(false);
+    const [ intro, setIntro ] = useState(true);
     const [ btnContinue, setBtnContinue ] = useState(false);
-    const [ form, setForm ] = useState(true);
+    const [ form, setForm ] = useState(false);
 
     useEffect(() => {
         const timeOut = setTimeout(() => {
