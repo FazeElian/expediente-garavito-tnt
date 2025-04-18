@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { isAxiosError } from "axios";
 
 // Styles
 import "../assets/css/components/StoryForm.css";
@@ -8,6 +9,12 @@ import "../assets/css/components/StoryForm.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoWarningOutline } from "react-icons/io5";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+
+// Form management
+import { useForm } from "react-hook-form";
+
+// Type
+import { StoryForm } from "../types/type";
 
 const ShareStoryView = () => {
     const [ intro, setIntro ] = useState(false);
@@ -30,7 +37,7 @@ const ShareStoryView = () => {
 
     // Handle input for image field
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [fileName, setFileName] = useState<string>('');
+    const [fileName, setFileName] = useState<string>("");
   
     const handleClick = () => {
         fileInputRef.current?.click();
@@ -41,9 +48,31 @@ const ShareStoryView = () => {
         if (file) {
             setFileName(file.name);
         } else {
-            setFileName('');
+            setFileName("");
         }
     };
+
+    // Form handle - validation
+    const initialValues = {
+        title: "",
+        author: "",
+        image: "",
+        content: "",
+    }
+
+    const { register, handleSubmit, formState: { errors } } = useForm ({
+        defaultValues: initialValues
+    });
+
+    const handleNewStory= async (formData: StoryForm) => {
+        try {
+            console.log(formData)
+        } catch (error) {
+            if (isAxiosError(error) && error.response) {
+                console.log(error.response.data);
+            }
+        }
+    }
 
     return (
         <section className="share-story">
@@ -66,15 +95,35 @@ const ShareStoryView = () => {
                 Continuar
                 <MdOutlineKeyboardDoubleArrowRight />
             </button>
-            <form action="" className={ `form-share-story ${form ? "active" : ""}` } method="post">
+            <form
+                action=""
+                className={ `form-share-story ${form ? "active" : ""}` }
+                method="post"
+                onSubmit={handleSubmit(handleNewStory)}
+            >
                 <h1>Comparte tu historia</h1>
                 <div className="form-group">
                     <label htmlFor="title">Título de la historia</label>
                     <input
                         type="text"
-                        name="title"
                         placeholder="Ponle título a tu experiencia inexplicable."
+                        {...register("title", {
+                            required: "Debes darle nombre a tu experiencia",
+                            pattern: {
+                                value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s-]+$/,
+                                message: "Sólo se permiten letras, números y guiones."
+                            },
+                            minLength: {
+                                value: 10,
+                                message: "El título debe tener al menos 10 caracteres."
+                            }
+                        })}
                     />
+                    {errors.title && 
+                        <p style={{ color: "#FF0033" }}>
+                            {errors.title?.message}
+                        </p>
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="name">Tu Nombre</label>
@@ -87,22 +136,48 @@ const ShareStoryView = () => {
                 <div className="form-group">
                     <label htmlFor="image">La fotografía del evento...</label>
                     <button className="custom-file-button" onClick={handleClick} type="button">
-                        {fileName ? "Imagen cargada" : 'Seleccionar Archivo'}
+                        {fileName ? "Imagen cargada" : "Seleccionar Archivo"}
                     </button>
                     <input
                         type="file"
-                        ref={fileInputRef}
-                        style={{ display: 'none' }}
-                        onChange={handleChange}
+                        style={{ display: "none" }}
+                        {...register("image", {
+                            required: "Debes subir una foto del evento",
+                            onChange: handleChange,
+                        })}
+                        ref={(e) => {
+                            fileInputRef.current = e;
+                            register("image").ref(e);
+                        }}
                     />
+                    {errors.image && 
+                        <p style={{ color: "#FF0033" }}>
+                            {errors.image?.message}
+                        </p>
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="story">Historia</label>
                     <textarea
-                        name="story"
                         id="story"
                         placeholder="Describe lo que viviste... aunque nadie te crea."
+                        {...register("content", {
+                            required: "Debes escribir tu experiencia",
+                            pattern: {
+                                value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s-]+$/,
+                                message: "Sólo se permiten letras, números y guiones."
+                            },
+                            minLength: {
+                                value: 30,
+                                message: "La historia debe tener al menos 30 caracteres."
+                            }
+                        })}
                     />
+                    {errors.content && 
+                        <p style={{ color: "#FF0033" }}>
+                            {errors.content?.message}
+                        </p>
+                    }
                 </div>
                 <button className="btn-submit-story" type="submit">
                     Compartir historia

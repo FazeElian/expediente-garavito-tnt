@@ -7,3 +7,5 @@ export type Story = {
     createdAt: string;
     updatedAt: string;
 }
+
+    export type StoryForm = Pick<Story, "title" | "author" | "image" | "content">
