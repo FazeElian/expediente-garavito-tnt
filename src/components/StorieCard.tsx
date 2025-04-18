@@ -1,6 +1,3 @@
-// Episode example img
-import EpisodeImg from "../assets/img/Episode.webp";
-
 // React icons
 import { FaRegCalendar } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
@@ -20,15 +17,15 @@ import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 const StorieCard = (props: Story) => {
     return (
         <motion.div
-            className="episode-card"
+            className="episode-card story-card"
             key={props.id}
             whileHover={{ scale: 1.1 }}
             transition={{
                 duration: .25,
             }}
         >
-            <div className="episode-img">
-                <img src={EpisodeImg} alt="" />
+            <div className="episode-img story-img">
+                <img src={props.image} alt="" />
             </div>
             <div className="episode-txt">
                 <h2>{props.title}</h2>
