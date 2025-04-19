@@ -17,10 +17,17 @@ const Banner = () => {
                     <MdHeadphones />
                     Escuchar Ahora
                 </a>
-                <a href="#" className="btn-banner btn-banner--black">
+                <LinkScroll
+                    to="episodes"
+                    className="btn-banner btn-banner--black"
+                    spy={true} 
+                    smooth={true} 
+                    offset={-300} 
+                    duration={500}
+                >
                     Ver episodios
                     <MdNavigateNext />
-                </a>
+                </LinkScroll>
             </div>
             <LinkScroll
                 to="about" 
