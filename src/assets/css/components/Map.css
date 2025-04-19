@@ -1,0 +1,152 @@
+.map {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 6rem 16rem 8rem;
+    min-height: 670px;
+    background-position: center;
+    background-position: top;
+    background-size: cover;
+    margin: 5rem auto 6rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 2px solid var(--color-gray);
+    border-top: 2px solid var(--color-gray);
+}
+
+    .img-map {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        filter:
+            drop-shadow(0 0 10rem var(--color-dark-purple))
+            invert(10%)
+            contrast(120%)
+        ;
+    }
+
+        .img-map img {
+            width: 100%;
+            opacity: .85;
+            border-radius: 8px;
+        }
+
+    .gallery-map {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 4rem;
+        justify-content: space-between;
+    }
+
+        .item-gallery-map {
+            display: flex;
+            flex: 30%;
+            height: auto;
+            min-width: 350px;
+            padding: 20px;
+            background-color: var(--color-black);
+            border: 2px solid var(--color-gray);
+            border-radius: 8px;
+            font-family: var(--font-raleway);
+            flex-direction: column;
+            text-decoration: none;
+            cursor: url("../../img/Pointer.png"), auto;
+        }
+
+            .top-item-gallery-map {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+
+                .circle-top-item-gallery-map {
+                    display: flex;
+                    width: 55px;
+                    height: 55px;
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: var(--color-white);
+                    background-color: var(--color-dark-purple);
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    border: 2px solid var(--color-gray);
+                }
+
+                .top-item-gallery-map h1 {
+                    color: var(--color-white);
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            
+            .item-gallery-map p {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 12px 0 1rem;
+                color: var(--color-white);
+            }
+
+            .item-gallery-map a {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--color-gray);
+                text-decoration: none;
+                align-self: flex-end;
+                cursor: url("../../img/Pointer.png"), auto;
+            }
+
+                .item-gallery-map a:hover {
+                    text-decoration: underline;
+                }
+
+/* Responsive 1280px */
+@media screen and (max-width: 1280px) {
+    .map {
+        padding: 6rem 13rem 8rem;
+    }
+}
+
+/* Responsive 1024px */
+@media screen and (max-width: 1024px) {
+    .map {
+        padding: 6rem 11rem 8rem;
+    }
+}
+
+/* Responsive 768px */
+@media screen and (max-width: 768px) {
+    .map {
+        padding: 6rem 6rem 5rem;
+        margin-top: 1rem;
+    }
+
+    .gallery-map {
+        justify-content: center;
+    }
+
+    .item-gallery-map {
+        min-width: 280px;
+    }
+}
+
+/* Responsive 425px */
+@media screen and (max-width: 425px) {
+    .map {
+        padding: 4.5rem 2.5rem 5rem;
+        margin-top: 0;
+    }
+
+    .img-map {
+        margin-top: 1rem;
+    }
+
+    .gallery-map {
+        margin-top: 2.5rem;
+    }
+}
