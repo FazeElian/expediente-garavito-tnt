@@ -18,6 +18,7 @@ import { Story } from "../types/type";
 
 // Api call function
 import { getAllStories } from "../api/api";
+import { Loading } from "./Loading";
 
 const StoriesGallery = () => {
     const { data: stories, isLoading } = useQuery({
@@ -29,7 +30,7 @@ const StoriesGallery = () => {
         staleTime: 1000 * 60 * 5,
     });
 
-    if (isLoading) return <h1>Loading....</h1>;
+    if (isLoading) return <Loading />;
 
     return (
         <>
