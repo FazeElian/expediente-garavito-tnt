@@ -39,7 +39,7 @@ const Header = () => {
                     >
                         Episodios
                     </LinkScroll>
-                    <li className="navbar-item">Contacto</li>
+                    <Link to="/share-story" className="navbar-item">Compartir relato</Link>
                     <li className="navbar-item navbar-item-menu">
                         <button className="btn-menu" onClick={handleMenu}>
                             <RiMenu3Line />
@@ -60,7 +60,7 @@ const Header = () => {
                     >
                         Episodios
                     </LinkScroll>
-                    <li className="navbar-mobile-item">Contacto</li>
+                    <Link to="/share-story" className="navbar-mobile-item">Compartir relato</Link>
                 </ul>
             </header>
 
