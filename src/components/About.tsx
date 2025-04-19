@@ -19,15 +19,15 @@ const About = () => {
             <div className="about-txt">
                 <TitleSection
                     icon={<></>}
-                    text="Acerca del Proyecto"
+                    text="Oscuridad Entre Muros"
                 />
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit feugiat eros,
-                    quis aliquet risus facilisis in. Proin tincidunt urna sed diam volutpat egestas.
+                    Sumérgete en una recopilación estremecedora de relatos: estudiantes que rompieron el silencio para contar
+                    lo que nunca debió salir a la luz.
 
                     <br/><br/>
-                    Proin ultricies sed eros sed feugiat. Donec sed odio sapien. Fusce facilisis feugiat
-                    magna a finibus. Praesent venenatis tempus mi. Aliquam tempus, ipsum ut blandit facilisis.
+                    Lo que comenzó como simples rumores terminó siendo una pesadilla colectiva: puertas que se abren solas,
+                    voces en los pasillos vacíos, desapariciones inexplicables y rituales ocultos entre las paredes de la institución.
                 </p>
             </div>
         </Element>
