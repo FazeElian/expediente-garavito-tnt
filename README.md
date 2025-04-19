@@ -22,7 +22,7 @@ Through an immersive experience, the project invites the public to explore, inte
 # 🖥 Preview
 <br>
 
-<img width="100%" src="./src/assets/img/ShareStoryBackground.gif">
+<video src="https://github.com/user-attachments/assets/c0b7e921-7850-4198-b169-ee87c58331d5" muted preload="auto" width="100%"></video>
 
 <br>
 
