@@ -33,8 +33,9 @@
             display: flex;
             flex: 100%;
             width: 390px;
-            min-height: 450px;
-            max-height: 475px;
+            height: auto;
+            min-height: 420px;
+            max-height: 420px;
         }
 
         .episode-img {
@@ -219,6 +220,11 @@
     .episode-card {
         max-width: 300px;
         min-width: 300px;
+    }
+
+    .story-card {
+        min-height: 390px;
+        max-height: 390px;
     }
 
     .btn-episode {
