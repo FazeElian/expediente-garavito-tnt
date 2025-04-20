@@ -9,6 +9,7 @@ const HomeView = lazy(() => import("./views/HomeView"));
 const BlogView = lazy(() => import("./views/BlogView"));
 const ShareStoryView = lazy(() => import("./views/ShareStoryView"));
 const StoryView = lazy(() => import("./views/StoryView"));
+const NotFoundView = lazy(() => import("./views/NotFoundView"))
 
 // Loader component
 import { Loading } from "./components/Loading";
@@ -23,7 +24,8 @@ function Router() {
                         <Route path="/blog" element={<BlogView />} />
                     </Route>
                     <Route path="/share-story" element={<ShareStoryView />} /> 
-                    <Route path="/blog/:id" element={<StoryView />} /> 
+                    <Route path="/blog/:id" element={<StoryView />} />
+                    <Route path="*" element={<NotFoundView />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>
