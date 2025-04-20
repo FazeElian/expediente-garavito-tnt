@@ -48,8 +48,20 @@ const Header = () => {
                 </ul>
                 <ul className={ `navbar-mobile ${menu ? "active" : ""}` }>
                     <h2>Menú:</h2>
-                    <Link to="/" className="navbar-item">Inicio</Link>
-                    <Link to="/blog" className="navbar-item">Narraciones</Link>
+                    <Link
+                        to="/"
+                        className="navbar-mobile-item"
+                        onClick={() => setMenu(false)}
+                    >
+                        Inicio
+                    </Link>
+                    <Link
+                        to="/blog"
+                        className="navbar-mobile-item"
+                        onClick={() => setMenu(false)}
+                    >
+                        Narraciones
+                    </Link>
                     <LinkScroll
                         to="episodes"
                         className="navbar-mobile-item"
@@ -57,10 +69,17 @@ const Header = () => {
                         smooth={true} 
                         offset={-225} 
                         duration={500}
+                        onClick={() => setMenu(false)}
                     >
                         Episodios
                     </LinkScroll>
-                    <Link to="/share-story" className="navbar-mobile-item">Compartir relato</Link>
+                    <Link
+                        to="/share-story"
+                        className="navbar-mobile-item"
+                        onClick={() => setMenu(false)}
+                    >
+                        Compartir relato
+                    </Link>
                 </ul>
             </header>
 
