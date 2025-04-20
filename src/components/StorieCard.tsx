@@ -13,6 +13,7 @@ import { Story } from "../types/type";
 import { formatDate } from "../utils/formatDate";
 import { timeAgo } from "../utils/timeAgo";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
+import { truncateText } from "../utils/truncateText";
 
 const StorieCard = (props: Story) => {
     return (
@@ -28,7 +29,7 @@ const StorieCard = (props: Story) => {
                 <img src={props.image} alt="" />
             </div>
             <div className="episode-txt">
-                <h2>{props.title}</h2>
+                <h2>{truncateText(props.title, 70)}</h2>
                 <div className="episode-txt-extra">
                     <div className="episode-txt-date">
                         <FaRegCalendar />
