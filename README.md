@@ -47,7 +47,7 @@ To document, and present the paranormal phenomena reported by students and facul
 
 
 > [!NOTE]  
-> The contributions and the code are in <b>English </b>. Neverthless, the content of this project (on live), the documentation, architecture and the thesis document are in <b>Spanish</b>. Make sure you can read and understand this language.
+> The contributions and the code are in <b>English </b>. Neverthless, the content of this project (on live), the videos and the stories are in <b>Spanish</b>. Make sure you can read and understand this language.
 
 <br>
 
