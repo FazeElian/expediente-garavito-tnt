@@ -41,7 +41,12 @@ const StorieCard = (props: Story) => {
                     </div>
                 </div>
                 <p>
-                    <b>Autor: </b> {props.author}
+                    <b>Autor: </b>
+                    {props.author ? (
+                        truncateText(props.author, 20)
+                    ): (
+                        "Anónimo"
+                    )}
                 </p>
                 <div className="cont-read-more">
                     <Link

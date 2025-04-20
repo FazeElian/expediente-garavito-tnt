@@ -36,6 +36,12 @@
         line-height: 24px;
     }
 
+    .story-content h2,
+    .story-content p {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
     .story-content img {
         display: flex;
         width: 100%;
@@ -63,6 +69,7 @@
                 font-size: 17px;
                 font-weight: 500;
                 line-height: 25px;
+                max-width: 220px;
             }
 
 /* Responsive 1440px */

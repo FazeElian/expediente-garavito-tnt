@@ -15,10 +15,11 @@ import { Loading } from "../components/Loading";
 // React icons
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-// Date formats
+// Date formats & other utils
 import { formatDate } from "../utils/formatDate";
 import { timeAgo } from "../utils/timeAgo";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
+import { truncateText } from "../utils/truncateText";
 
 const StoryView = () => {
     const { id } = useParams<{ id: string }>();
@@ -46,7 +47,7 @@ const StoryView = () => {
                         <div className="item-top-story-content" style={{ paddingLeft: 0 }}>
                             <h2>
                                 <b>Autor: </b>
-                                {story.author}
+                                {truncateText(story.author, 20)}
                             </h2>
                         </div>
                         <div className="item-top-story-content">
