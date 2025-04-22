@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 // Episode example img
-import EpisodeImg from "../assets/img/Episode.webp";
+import EpisodeImg from "../assets/img/Default.webp";
 
 // React icons
 import { FaRegCalendar } from "react-icons/fa6";
@@ -22,30 +24,29 @@ const EpisodeCard = () => {
                 <img src={EpisodeImg} alt="" />
             </div>
             <div className="episode-txt">
-                <h2><b>Episodio #: </b>El Archivo Perdido</h2>
+                <h2><b>Episodio #: </b>Próximamente...</h2>
                 <div className="episode-txt-extra">
                     <div className="episode-txt-date">
                         <FaRegCalendar />
-                        22/03/2025
+                        ##/##/####
                     </div>
                     <div className="episode-txt-duration">
                         <MdOutlineWatchLater />
-                        15 min
+                        ## min
                     </div>
                 </div>
                 <p>
-                    Descubrimiento de documentos y relatos ocultos que revelan las primeras
-                    señales de un caso que estremeció a un país entero.
+                    Próximamente...
                 </p>
                 <div className="episode-btns">
-                    <a href="#" className="btn-episode btn-episode--spotify">
+                    <Link to="#" className="btn-episode btn-episode--spotify">
                         <FaSpotify />
                         Spotify
-                    </a>
-                    <a href="#" className="btn-episode btn-episode--youtube">
+                    </Link>
+                    <Link to="#" className="btn-episode btn-episode--youtube">
                         <FaYoutube />
                         Youtube
-                    </a>
+                    </Link>
                 </div>
             </div>
         </motion.div>
