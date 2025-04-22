@@ -18,7 +18,12 @@ import { StoryForm } from "../types/type";
 // API Call
 import { newStory } from "../api/api";
 
+// Hook for title
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
+
 const ShareStoryView = () => {
+    useDocumentTitle("Compartir relato")
+
     const [ intro, setIntro ] = useState(true);
     const [ btnContinue, setBtnContinue ] = useState(false);
     const [ form, setForm ] = useState(false);

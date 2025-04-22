@@ -21,6 +21,9 @@ import { timeAgo } from "../utils/timeAgo";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 import { truncateText } from "../utils/truncateText";
 
+// Hook for title
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
+
 const StoryView = () => {
     const { id } = useParams<{ id: string }>();
 
@@ -30,6 +33,8 @@ const StoryView = () => {
         retry: 1,
         refetchOnWindowFocus: false,
     });
+
+    useDocumentTitle(story?.title || "");
 
     if (isLoading) return <Loading />
 
