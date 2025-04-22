@@ -52,7 +52,11 @@ const StoryView = () => {
                         <div className="item-top-story-content" style={{ paddingLeft: 0 }}>
                             <h2>
                                 <b>Autor: </b>
-                                {truncateText(story.author, 20)}
+                                {story.author ? (
+                                    truncateText(story.author, 20)
+                                ): (
+                                    "Anónimo"
+                                )}
                             </h2>
                         </div>
                         <div className="item-top-story-content">
