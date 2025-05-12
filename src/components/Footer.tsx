@@ -4,7 +4,6 @@ import "../assets/css/components/Footer.css";
 // React Icons
 import { FaTwitter, FaInstagram, FaSpotify } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
-import { IoMdMail } from "react-icons/io";
 
 // Framer motion
 import { motion } from "motion/react";
@@ -15,7 +14,7 @@ const Footer = () => {
             <h2>La historia continúa... Conéctate con nosotros.</h2>
             <div className="footer-group">
                 <motion.a
-                    href="#"
+                    href="https://www.youtube.com/@ExpedienteGaravito"
                     className="footer-item"
                     whileHover={{ scale: 1.1 }}
                     transition={{
@@ -26,7 +25,7 @@ const Footer = () => {
                     Youtube
                 </motion.a>
                 <motion.a
-                    href="#"
+                    href="https://x.com/Expediente49819"
                     className="footer-item"
                     whileHover={{ scale: 1.1 }}
                     transition={{
@@ -37,7 +36,7 @@ const Footer = () => {
                     Twitter - X
                 </motion.a>
                 <motion.a
-                    href="#"
+                    href="https://www.instagram.com/expediente_garavito.tnt/"
                     className="footer-item"
                     whileHover={{ scale: 1.1 }}
                     transition={{
@@ -48,7 +47,7 @@ const Footer = () => {
                     Instagram
                 </motion.a>
                 <motion.a
-                    href="#"
+                    href="https://open.spotify.com/show/0uqR8ztFNWSiv9Rc2pT7KT"
                     className="footer-item"
                     whileHover={{ scale: 1.1 }}
                     transition={{
@@ -57,17 +56,6 @@ const Footer = () => {
                 >
                     <FaSpotify />
                     Spotify
-                </motion.a>
-                <motion.a
-                    href="#"
-                    className="footer-item"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{
-                        duration: .25,
-                    }}
-                >
-                    <IoMdMail />
-                    Mail
                 </motion.a>
             </div>
         </footer>
