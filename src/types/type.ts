@@ -9,3 +9,14 @@ export type Story = {
 }
 
 export type StoryForm = Pick<Story, "title" | "author" | "image" | "content">
+
+export type EpisodeCardType = {
+    id: number,
+    name: string,
+    description: string,
+    date: string,
+    imgSrc: string,
+    duration: number,
+    spotifyUrl: string,
+    youtubeUrl: string,
+}

@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 
-// Episode example img
-import EpisodeImg from "../assets/img/Default.webp";
-
 // React icons
 import { FaRegCalendar } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
@@ -11,7 +8,22 @@ import { FaSpotify, FaYoutube } from "react-icons/fa";
 // Framer motion
 import { motion } from "motion/react";
 
-const EpisodeCard = () => {
+// Type
+import { EpisodeCardType } from "../types/type";
+
+// Utils
+import { truncateText } from "../utils/truncateText";
+
+const EpisodeCard = ({
+    id,
+    name,
+    description,
+    date,
+    imgSrc,
+    duration,
+    spotifyUrl,
+    youtubeUrl
+}: EpisodeCardType) => {
     return (
         <motion.div
             className="episode-card"
@@ -21,29 +33,29 @@ const EpisodeCard = () => {
             }}
         >
             <div className="episode-img">
-                <img src={EpisodeImg} alt="" />
+                <img src={ imgSrc } alt={ name } />
             </div>
             <div className="episode-txt">
-                <h2><b>Episodio #: </b>Próximamente...</h2>
+                <h2><b>Episodio { id }: </b>{ name }</h2>
                 <div className="episode-txt-extra">
                     <div className="episode-txt-date">
                         <FaRegCalendar />
-                        ##/##/####
+                        { date }
                     </div>
                     <div className="episode-txt-duration">
                         <MdOutlineWatchLater />
-                        ## min
+                        { duration } min
                     </div>
                 </div>
                 <p>
-                    Próximamente...
+                    { truncateText(description, 90) }
                 </p>
                 <div className="episode-btns">
-                    <Link to="#" className="btn-episode btn-episode--spotify">
+                    <Link to={ spotifyUrl } className="btn-episode btn-episode--spotify" target="_blank">
                         <FaSpotify />
                         Spotify
                     </Link>
-                    <Link to="#" className="btn-episode btn-episode--youtube">
+                    <Link to={ youtubeUrl } className="btn-episode btn-episode--youtube" target="_blank">
                         <FaYoutube />
                         Youtube
                     </Link>
