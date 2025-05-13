@@ -13,7 +13,7 @@ const Banner = () => {
         <section className="banner">
             <h1>Expediente Garavito</h1>
             <div className="banner-btns">
-                <a href="#" className="btn-banner btn-banner--purple">
+                <a href="https://open.spotify.com/show/0uqR8ztFNWSiv9Rc2pT7KT?si=bae37f2cdbc04a10" className="btn-banner btn-banner--purple">
                     <MdHeadphones />
                     Escuchar Ahora
                 </a>
